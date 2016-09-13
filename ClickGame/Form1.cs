@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClickGame {
@@ -13,28 +6,46 @@ namespace ClickGame {
         public Form1() {
             InitializeComponent();
         }
-
+        const int REMAINING = 30;
+        const int SCORE = 0;
         bool IsRunning = false;
-        int Remaining = 60;
-        int Count = 0;
+        int Remaining = REMAINING;
+        int Score = SCORE;
 
         private void button1_Click(object sender, EventArgs e) {
-            var count = int.Parse(remaining.Text);
-            remaining.Text = (count++).ToString();
+            Score++;
+            scoreLabel.Text = Score.ToString();
             if (!IsRunning) {
+                timer1.Enabled = true;
                 timer1.Start();
+                IsRunning = true;
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e) {
-            var count = int.Parse(remaining.Text);
-            remaining.Text = (count--).ToString();
+            if (Remaining == 0) {
+                timer1.Stop();
+                timer1.Enabled = false;
+                IsRunning = false;
+                button1.Enabled = false;
+                button2.Enabled = true;
+            } else {
+                Remaining--;
+                remainingLabel.Text = Remaining.ToString();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            score.Text = "60";
-            remaining.Text = "0";
-            button1.Text = "Click!";
+
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            Score = SCORE;
+            Remaining = REMAINING;
+            scoreLabel.Text = Score.ToString();
+            remainingLabel.Text = Remaining.ToString();
+            button1.Enabled = true;
+            button2.Enabled = false;
         }
     }
 }
