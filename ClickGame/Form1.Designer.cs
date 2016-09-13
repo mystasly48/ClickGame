@@ -26,8 +26,8 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.score = new System.Windows.Forms.Label();
-            this.remaining = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
+            this.remainingLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -46,23 +46,23 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // score
+            // scoreLabel
             // 
-            this.score.AutoSize = true;
-            this.score.Location = new System.Drawing.Point(45, 24);
-            this.score.Name = "score";
-            this.score.Size = new System.Drawing.Size(11, 12);
-            this.score.TabIndex = 1;
-            this.score.Text = "0";
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Location = new System.Drawing.Point(45, 24);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(11, 12);
+            this.scoreLabel.TabIndex = 1;
+            this.scoreLabel.Text = "0";
             // 
-            // remaining
+            // remainingLabel
             // 
-            this.remaining.AutoSize = true;
-            this.remaining.Location = new System.Drawing.Point(201, 24);
-            this.remaining.Name = "remaining";
-            this.remaining.Size = new System.Drawing.Size(17, 12);
-            this.remaining.TabIndex = 2;
-            this.remaining.Text = "60";
+            this.remainingLabel.AutoSize = true;
+            this.remainingLabel.Location = new System.Drawing.Point(201, 24);
+            this.remainingLabel.Name = "remainingLabel";
+            this.remainingLabel.Size = new System.Drawing.Size(17, 12);
+            this.remainingLabel.TabIndex = 2;
+            this.remainingLabel.Text = "60";
             // 
             // Form1
             // 
@@ -84,8 +84,8 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label score;
-        private System.Windows.Forms.Label remaining;
+        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label remainingLabel;
     }
 }
 
